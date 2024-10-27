@@ -1,0 +1,39 @@
+<div class="container mt-4">
+    <div class="flex-table mt-3">
+      <div class="flex-header">
+        <div class="flex-cell">Name</div>
+        <div class="flex-cell">Description</div>
+        <div class="flex-cell">User</div>
+        <div class="flex-cell">Status</div>
+        <div class="flex-cell">Set as Complete</div>
+      </div>
+      <div class="flex-body">
+        <div *ngFor="let task of tasks" class="flex-row">
+          <div class="flex-cell" [pTooltip]="tooltipNameContent" tooltipPosition="top">{{ task.name }}
+            <ng-template #tooltipNameContent>
+              <div class="flex align-items-center bg-dark text-white" style="border-radius: 20px;padding: 10px;">
+                <span>{{ task.name }}</span>
+              </div>
+            </ng-template>
+          </div>
+          <div class="flex-cell" [pTooltip]="tooltipDescriptionContent" tooltipPosition="top">{{ task.description }}
+            <ng-template #tooltipDescriptionContent>
+              <div class="flex align-items-center bg-dark text-white" style="border-radius: 20px;padding: 10px;">
+                <span>{{ task.description }}</span>
+              </div>
+            </ng-template>
+          </div>
+          <div class="flex-cell">{{ task.user }}</div>
+          <div class="flex-cell">
+            <button [ngClass]="task.completed ? 'completed' : 'pending'" style="border:0">{{ task.completed ? 'Completed' : 'Pending' }}</button>        
+          </div>
+          <div class="flex-cell">
+              <button class="btn btn-secondary" (click)="editTask(task)" [disabled]="task.completed">Complete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+        <button class="btn btn-primary my-3" (click)="addTask()">Add Task</button>
+    </div>
+</div>

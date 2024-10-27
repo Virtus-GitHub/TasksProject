@@ -1,0 +1,11 @@
+<h5 class="text-success mt-3 text-center">Add New Task</h5>
+<form class="my-4 w-50 mx-auto" #f="ngForm" (submit)="f.form.valid && addTask($event)">
+    <div class="d-flex justify-content-between align-items-center">
+        <input type="text" id="name" name="name" placeholder="Task Name" class="form-control me-2 w-75"  autocomplete="off" [(ngModel)]="nameInput" required />
+        <input type="text" id="description" name="description" placeholder="Task description" class="form-control me-2 w-75" autocomplete="off" [(ngModel)]="descriptionInput" required />
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-danger mx-3" (click)="cancel()">Cancel</button>
+    </div>  
+</form>

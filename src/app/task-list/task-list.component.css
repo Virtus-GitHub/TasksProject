@@ -1,0 +1,78 @@
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.flex-header {
+  display: flex;
+  font-weight: bolder;
+  background-color: #999;
+  padding: 16px 0;
+  color: black;
+}
+
+.flex-cell {
+  flex: 1;
+  padding: 12px 8px;
+  text-align: center;
+  white-space: nowrap;          /* Force text to one line */
+  overflow: hidden;             /* Hide text more than 50 characters */
+  text-overflow: ellipsis;      /* Add three dots when text is more than 50 characters (...) */
+}
+
+.description {
+  max-width: 200px;
+}
+
+.flex-body {
+  max-height: calc(10 * 48px); /* Max height to 10 files */
+  overflow-y: auto;
+}
+
+.flex-row {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+  transition: background-color 0.2s ease;
+}
+
+.flex-row:hover {
+  background-color: #9999;
+}
+
+.completed {
+  color: white;
+  background-color: #4caf50;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.pending {
+  color: white;
+  background-color: #f44336;
+  padding: px;
+  border-radius: 4px;
+}
+
+.btn-state{
+  border: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flex-header, .flex-row {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .flex-cell {
+    width: 100%;
+    padding: 8px 0;
+  }
+}

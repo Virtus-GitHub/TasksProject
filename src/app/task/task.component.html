@@ -1,0 +1,10 @@
+<li class="list-group-item text-center">
+    {{task.description}},
+    {{task.user}},
+    @if(task.completed){
+        <span><i class="glyphicon glyphicon-thumbs-up" style="background-color: green;"></i></span>
+    }
+    @else{
+        <span><i class="glyphicon glyphicon-thumbs-down" style="background-color: red;"></i></span>
+    }
+</li>
