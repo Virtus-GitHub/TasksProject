@@ -25,10 +25,15 @@
           </div>
           <div class="flex-cell">{{ task.user }}</div>
           <div class="flex-cell">
-            <button [ngClass]="task.completed ? 'completed' : 'pending'" style="border:0">{{ task.completed ? 'Completed' : 'Pending' }}</button>        
+            <button class="btnCompleted" [ngClass]="task.completed ? 'completed' : 'pending'" style="border:0">{{ task.completed ? 'Completed' : 'Pending' }}</button>        
           </div>
           <div class="flex-cell">
-              <button class="btn btn-secondary" (click)="editTask(task)" [disabled]="task.completed">Complete</button>
+              <button class="btn btn-secondary btnCompleted" (click)="editTask(task)" [disabled]="task.completed" [pTooltip]="tooltipCompleteContent" tooltipPosition="top">Complete</button>
+              <ng-template #tooltipCompleteContent>
+                <div class="flex align-items-center bg-dark text-white" style="border-radius: 20px;padding: 10px;">
+                  <span>Set as complete</span>
+                </div>
+              </ng-template>
           </div>
         </div>
       </div>
