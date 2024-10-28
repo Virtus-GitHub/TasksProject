@@ -7,8 +7,11 @@ This project get the information from MockApi and save the data into localStorag
 
 ## Run Project in Development server
 1.- Open Visual Studio Code.
+2.- Needs to install node_modules:
+      - Install NodeJs. (If not installed).
+      - Write the command ´npm install´ in Visual Studio Code terminal, in the project folder.
 
-2.- From the terminal:
+3.- From the terminal:
     Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
     Click `ctrl + c` to stop the application (It won´t close the browser tab) 
 
