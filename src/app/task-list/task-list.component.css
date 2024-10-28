@@ -64,6 +64,12 @@
   border: 0;
 }
 
+.btnCompleted{
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .flex-header, .flex-row {
@@ -74,5 +80,19 @@
   .flex-cell {
     width: 100%;
     padding: 8px 0;
+  }
+
+  .btnCompleted {
+    color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
   }
 }
